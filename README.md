@@ -39,7 +39,7 @@ Diagram: [`/diagrams`](./diagrams)
 Software engineer and security professional, currently deepening AI security expertise. This project is part of a broader effort to apply traditional
 security fundamentals to AI-integrated systems, with a focus on the financial services sector.
 
-Connect on [LinkedIn](#) — happy to talk threat modelling, AI security, or fintech risk.
+Connect on [LinkedIn](https://linkedin.com/in/sophia-enakpoya/) — happy to talk threat modelling, AI security, or fintech risk.
 
 ## License
 

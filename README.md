@@ -27,7 +27,6 @@ realistic-shaped system, not to assess any specific organisation.
 - **Future work** — what dynamic/hands-on testing would look like beyond this modelling exercise
 
 Full write-up: [`threat-model.md`](./threat-model.md)
-Diagram: [`/diagrams`](./diagrams)
 
 ## Frameworks used
 

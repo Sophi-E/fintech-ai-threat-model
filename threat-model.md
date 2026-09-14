@@ -48,36 +48,9 @@
 
 ## 2. Architecture & Trust Boundaries
 
-```mermaid
-flowchart LR
-    U1["Authenticated User<br/>(in-app chat)"] --> GW
-    U2["WhatsApp User<br/>(phone-based identity)"] --> GW
-    U3["Public Website Visitor<br/>(pre-login, unauthenticated)"] --> GW
+![Architecture diagram](./diagrams/architecture-diagram.svg)
 
-    GW["API Gateway /<br/>Session Layer"] --> ORCH
 
-    subgraph TB1[" TRUST BOUNDARY: user input enters LLM context "]
-        ORCH["LLM Orchestration Layer<br/>(prompt assembly, RAG retrieval)"]
-    end
-
-    KB[("Knowledge Base<br/>(FAQs, policy docs,<br/>past support tickets)")] --> ORCH
-    ORCH --> LLM["Hosted LLM API"]
-    LLM --> ORCH
-
-    subgraph TB2[" TRUST BOUNDARY: model output triggers real actions "]
-        ORCH --> TOOLS["Tool-Calling Layer"]
-    end
-
-    TOOLS --> T1["get_account_summary<br/>(read)"]
-    TOOLS --> T2["get_transaction_history<br/>(read)"]
-    TOOLS --> T3["block_card<br/>(WRITE — high risk)"]
-    TOOLS --> T4["create_support_ticket<br/>(write)"]
-    TOOLS --> T5["escalate_to_human<br/>(write)"]
-
-    T1 --> DB[("Core Banking / Account DB")]
-    T2 --> DB
-    T3 --> DB
-```
 
 Two trust boundaries matter most here:
 
